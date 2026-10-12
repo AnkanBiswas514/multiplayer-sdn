@@ -1,7 +1,7 @@
 import socket
 import time
 
-SERVER_IP = "127.0.0.1"
+SERVER_IP = "10.0.0.1"
 SERVER_PORT = 5000
 
 client = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
@@ -14,6 +14,8 @@ sequence = 1
 
 UPDATE_RATE = 0.1
 
+y_direction = 1
+
 while True:
     timestamp = time.time()
 
@@ -24,9 +26,13 @@ while True:
     data, address = client.recvfrom(1024)
 
     x += 1
+    y += y_direction
 
-    if x>55:
-        x=0
+    if x > 55:
+        x = 0
+
+    if y >= 35 or y <= 2:
+        y_direction *= -1
+
     sequence += 1
-
     time.sleep(UPDATE_RATE)
