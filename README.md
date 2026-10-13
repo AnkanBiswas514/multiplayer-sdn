@@ -2,7 +2,6 @@ Multiplayer Game Communication Network
 
 An SDN-controlled network that prioritizes real-time multiplayer game traffic with live QoS monitoring on a web dashboard.
 
-Team 11: Bhargav A, Ankan Biswas, Ashutosh Hegde
 
 🌟 Overview
 
